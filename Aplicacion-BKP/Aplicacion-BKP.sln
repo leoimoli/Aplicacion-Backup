@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion-BKP", "Aplicacion-BKP\Aplicacion-BKP.csproj", "{8C0F3CFA-59CD-4134-9F16-71E6D285902C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AppBkp-Instalador", "AppBkp-Instalador\AppBkp-Instalador.vdproj", "{BF52FD49-43C2-47BD-AF4D-605917640AA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C0F3CFA-59CD-4134-9F16-71E6D285902C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0F3CFA-59CD-4134-9F16-71E6D285902C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0F3CFA-59CD-4134-9F16-71E6D285902C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0F3CFA-59CD-4134-9F16-71E6D285902C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF52FD49-43C2-47BD-AF4D-605917640AA1}.Debug|Any CPU.ActiveCfg = Debug
+		{BF52FD49-43C2-47BD-AF4D-605917640AA1}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6973F03C-C3B7-4A6F-98E7-2725612752AB}
+	EndGlobalSection
+EndGlobal
