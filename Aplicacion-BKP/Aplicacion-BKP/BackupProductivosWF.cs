@@ -45,7 +45,7 @@ namespace Aplicacion_BKP
         {
             char[] div = { ';' };
             // si son entre las 10 y las 11 hago backup de Pulpejitos
-            if (DateTime.Now.Hour > 9 && DateTime.Now.Hour < 10)
+            if (DateTime.Now.Hour >= 9 && DateTime.Now.Hour <= 10)
             {
                 Servidor = "bksi9gvlsu8lbmkjd1p7-mysql.services.clever-cloud.com";
                 Base = "bksi9gvlsu8lbmkjd1p7";
@@ -78,7 +78,7 @@ namespace Aplicacion_BKP
                 }
             }
             // si son entre las 10 y las 11 hago backup de Mayorista 509
-            if (DateTime.Now.Hour > 10 && DateTime.Now.Hour < 11)
+            if (DateTime.Now.Hour >= 10 && DateTime.Now.Hour <= 11)
             {
                 Servidor = "bf4dnhohttnh3y9dkh5i-mysql.services.clever-cloud.com";
                 Base = "bf4dnhohttnh3y9dkh5i";
@@ -109,7 +109,7 @@ namespace Aplicacion_BKP
                 }
             }
             // si son entre las 11 y las 12 hago backup de All In QR
-            if (DateTime.Now.Hour > 11 && DateTime.Now.Hour < 12)
+            if (DateTime.Now.Hour >= 11 && DateTime.Now.Hour <= 12)
             {
                 Servidor = "bferilotqyivobmd2h7p-mysql.services.clever-cloud.com";
                 Base = "bferilotqyivobmd2h7p";
