@@ -44,59 +44,38 @@ namespace Aplicacion_BKP
         private void cargaConf()
         {
             char[] div = { ';' };
-            // si son entre las 10 y las 11 hago backup de Pulpejitos
-            if (DateTime.Now.Hour >= 9 && DateTime.Now.Hour <= 10)
+            // Hago backup de Pulpejitos        
+            Servidor = "bksi9gvlsu8lbmkjd1p7-mysql.services.clever-cloud.com";
+            Base = "bksi9gvlsu8lbmkjd1p7";
+            Puerto = "3306";
+            Usuario = "uqv4i9vwt1msz5bm";
+            Clave = "Dq7qM0MEqOVWwvfNBhyc";
+            //string[] cadenaRuta = Settings.Default.ruta.Split(div);
+            string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
+            string NombreArchivo = "Pulpejitos.sql";
+            //Ruta = Settings.Default.ruta + NombreArchivo;
+            Ruta = cadenaRuta + NombreArchivo;
+            bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            if (exito == true)
             {
-                Servidor = "bksi9gvlsu8lbmkjd1p7-mysql.services.clever-cloud.com";
-                Base = "bksi9gvlsu8lbmkjd1p7";
-                Puerto = "3306";
-                Usuario = "uqv4i9vwt1msz5bm";
-                Clave = "Dq7qM0MEqOVWwvfNBhyc";
-                //string[] cadenaRuta = Settings.Default.ruta.Split(div);
-                string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
-                string NombreArchivo = "Pulpejitos.sql";
-                //Ruta = Settings.Default.ruta + NombreArchivo;
-                Ruta = cadenaRuta + NombreArchivo;
-                bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+                ///// Backup Mayorista 509
+                exito = BackupMayorista();
                 if (exito == true)
                 {
-                    const string message2 = "Se registro backup de Pulpejitos exitosamente.";
-                    const string caption2 = "Éxito";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Asterisk);
-                    Hide();
-                }
-                else
-                {
-                    const string message2 = "Atención: Fallo el backup de Pulpejitos.";
-                    const string caption2 = "Atención";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Asterisk);
-                    Hide();
-                }
-            }
-            // si son entre las 10 y las 11 hago backup de Mayorista 509
-            if (DateTime.Now.Hour >= 10 && DateTime.Now.Hour <= 11)
-            {
-                Servidor = "bf4dnhohttnh3y9dkh5i-mysql.services.clever-cloud.com";
-                Base = "bf4dnhohttnh3y9dkh5i";
-                Puerto = "3306";
-                Usuario = "uafpwdppu6hq6ztt";
-                Clave = "Z10yrE22hdRLA30Z7CPM";              
-                string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
-                string NombreArchivo = "Mayorista509.sql";               
-                Ruta = cadenaRuta + NombreArchivo;
-                bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
-                if (exito == true)
-                {
-                    const string message2 = "Se registro backup de Mayorista 509 exitosamente.";
-                    const string caption2 = "Éxito";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Asterisk);
-                    Close();
+                    ///// Backup All In QR
+                    exito = BackupAllInQR();
+                    if (exito == true)
+                    {
+
+                    }
+                    else
+                    {
+                        const string message2 = "Atención: Fallo el backup de All In QR.";
+                        const string caption2 = "Atención";
+                        var result2 = MessageBox.Show(message2, caption2,
+                                                     MessageBoxButtons.OK,
+                                                     MessageBoxIcon.Asterisk);
+                    }
                 }
                 else
                 {
@@ -105,41 +84,52 @@ namespace Aplicacion_BKP
                     var result2 = MessageBox.Show(message2, caption2,
                                                  MessageBoxButtons.OK,
                                                  MessageBoxIcon.Asterisk);
-                    Close();
                 }
             }
-            // si son entre las 11 y las 12 hago backup de All In QR
-            if (DateTime.Now.Hour >= 11 && DateTime.Now.Hour <= 12)
+            else
             {
-                Servidor = "bferilotqyivobmd2h7p-mysql.services.clever-cloud.com";
-                Base = "bferilotqyivobmd2h7p";
-                Puerto = "3306";
-                Usuario = "uweebykw37cfssem";
-                Clave = "mTvombqwH6aZqBejoPQh";
-                string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
-                string NombreArchivo = "AllInQR.sql";
-                Ruta = cadenaRuta + NombreArchivo;
-                bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
-                if (exito == true)
-                {
-                    const string message2 = "Se registro backup de AllInQR exitosamente.";
-                    const string caption2 = "Éxito";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Asterisk);
-                    Close();
-                }
-                else
-                {
-                    const string message2 = "Atención: Fallo el backup de Mayorista 509.";
-                    const string caption2 = "Atención";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Asterisk);
-                    Close();
-                }
+                const string message2 = "Atención: Fallo el backup de Pulpejitos.";
+                const string caption2 = "Atención";
+                var result2 = MessageBox.Show(message2, caption2,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Asterisk);
+                Hide();
             }
+
         }
+
+        private bool BackupAllInQR()
+        {
+            bool Exito = false;
+            // Hago backup de All In QR           
+            Servidor = "bferilotqyivobmd2h7p-mysql.services.clever-cloud.com";
+            Base = "bferilotqyivobmd2h7p";
+            Puerto = "3306";
+            Usuario = "uweebykw37cfssem";
+            Clave = "mTvombqwH6aZqBejoPQh";
+            string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
+            string NombreArchivo = "AllInQR.sql";
+            Ruta = cadenaRuta + NombreArchivo;
+            bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            return Exito;
+        }
+
+        private bool BackupMayorista()
+        {
+            bool Exito = false;
+            // Hago backup de Mayorista 509
+            Servidor = "bf4dnhohttnh3y9dkh5i-mysql.services.clever-cloud.com";
+            Base = "bf4dnhohttnh3y9dkh5i";
+            Puerto = "3306";
+            Usuario = "uafpwdppu6hq6ztt";
+            Clave = "Z10yrE22hdRLA30Z7CPM";
+            string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
+            string NombreArchivo = "Mayorista509.sql";
+            Ruta = cadenaRuta + NombreArchivo;
+            bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            return Exito;
+        }
+
         private bool RealizarBackup(string Servidor, string Base, string Puerto, string Usuario, string Clave, string Ruta)
         {
             bool Exito = false;
