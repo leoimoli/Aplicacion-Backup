@@ -66,7 +66,11 @@ namespace Aplicacion_BKP
                     exito = BackupAllInQR();
                     if (exito == true)
                     {
-
+                        const string message2 = "Se realizaron los backups exitosamente.";
+                        const string caption2 = "Exito";
+                        var result2 = MessageBox.Show(message2, caption2,
+                                                     MessageBoxButtons.OK,
+                                                     MessageBoxIcon.Asterisk);
                     }
                     else
                     {
@@ -110,7 +114,7 @@ namespace Aplicacion_BKP
             string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
             string NombreArchivo = "AllInQR.sql";
             Ruta = cadenaRuta + NombreArchivo;
-            bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            Exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
             return Exito;
         }
 
@@ -126,7 +130,7 @@ namespace Aplicacion_BKP
             string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
             string NombreArchivo = "Mayorista509.sql";
             Ruta = cadenaRuta + NombreArchivo;
-            bool exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            Exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
             return Exito;
         }
 
