@@ -66,11 +66,24 @@ namespace Aplicacion_BKP
                     exito = BackupAllInQR();
                     if (exito == true)
                     {
-                        const string message2 = "Se realizaron los backups exitosamente.";
-                        const string caption2 = "Exito";
-                        var result2 = MessageBox.Show(message2, caption2,
-                                                     MessageBoxButtons.OK,
-                                                     MessageBoxIcon.Asterisk);
+                        ///// Backup SICO
+                        exito = BackupSico();
+                        if (exito == true)
+                        {
+                            const string message2 = "Se realizaron los backups exitosamente.";
+                            const string caption2 = "Exito";
+                            var result2 = MessageBox.Show(message2, caption2,
+                                                         MessageBoxButtons.OK,
+                                                         MessageBoxIcon.Asterisk);
+                        }
+                        else
+                        {
+                            const string message2 = "Atención: Fallo el backup de Sico.";
+                            const string caption2 = "Atención";
+                            var result2 = MessageBox.Show(message2, caption2,
+                                                         MessageBoxButtons.OK,
+                                                         MessageBoxIcon.Asterisk);
+                        }
                     }
                     else
                     {
@@ -113,6 +126,22 @@ namespace Aplicacion_BKP
             Clave = "mTvombqwH6aZqBejoPQh";
             string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
             string NombreArchivo = "AllInQR.sql";
+            Ruta = cadenaRuta + NombreArchivo;
+            Exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            return Exito;
+        }
+
+        private bool BackupSico()
+        {
+            bool Exito = false;
+            // Hago backup de Sico          
+            Servidor = "bxiv9uwmsnzs84bqmvpf-mysql.services.clever-cloud.com";
+            Base = "bxiv9uwmsnzs84bqmvpf";
+            Puerto = "3306";
+            Usuario = "ubdvhp9n9ivn8zif";
+            Clave = "qLDG2eq3KKCMup0gHZnI";
+            string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
+            string NombreArchivo = "Sico.sql";
             Ruta = cadenaRuta + NombreArchivo;
             Exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
             return Exito;
