@@ -38,7 +38,7 @@ namespace Aplicacion_BKP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Backups\\backup.sql")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Users\\\\Usuario\\\\Desktop\\\\Backup\\\\")]
         public string ruta {
             get {
                 return ((string)(this["ruta"]));

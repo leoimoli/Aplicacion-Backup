@@ -70,15 +70,28 @@ namespace Aplicacion_BKP
                         exito = BackupSico();
                         if (exito == true)
                         {
-                            const string message2 = "Se realizaron los backups exitosamente.";
-                            const string caption2 = "Exito";
-                            var result2 = MessageBox.Show(message2, caption2,
-                                                         MessageBoxButtons.OK,
-                                                         MessageBoxIcon.Asterisk);
+                            ///// Backup STOCOM
+                            exito = BackupStoCom();
+                            if (exito == true)
+                            {
+                                const string message2 = "Se realizaron los backups exitosamente.";
+                                const string caption2 = "Exito";
+                                var result2 = MessageBox.Show(message2, caption2,
+                                                             MessageBoxButtons.OK,
+                                                             MessageBoxIcon.Asterisk);
+                            }
+                            else
+                            {
+                                const string message2 = "Atención: Fallo el backup de STOCOM.";
+                                const string caption2 = "Atención";
+                                var result2 = MessageBox.Show(message2, caption2,
+                                                             MessageBoxButtons.OK,
+                                                             MessageBoxIcon.Asterisk);
+                            }
                         }
                         else
                         {
-                            const string message2 = "Atención: Fallo el backup de Sico.";
+                            const string message2 = "Atención: Fallo el backup de SICO.";
                             const string caption2 = "Atención";
                             var result2 = MessageBox.Show(message2, caption2,
                                                          MessageBoxButtons.OK,
@@ -126,6 +139,22 @@ namespace Aplicacion_BKP
             Clave = "mTvombqwH6aZqBejoPQh";
             string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
             string NombreArchivo = "AllInQR.sql";
+            Ruta = cadenaRuta + NombreArchivo;
+            Exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
+            return Exito;
+        }
+
+        private bool BackupStoCom()
+        {
+            bool Exito = false;
+            // Hago backup de StoCom     
+            Servidor = "b53pzoffk7djht4jlwrb-mysql.services.clever-cloud.com";
+            Base = "b53pzoffk7djht4jlwrb";
+            Puerto = "3306";
+            Usuario = "u45jefh8etvhmedm";
+            Clave = "RAqBGsDhoogGD0QqxOue";
+            string cadenaRuta = "C:\\Users\\Usuario\\Desktop\\Backup\\";
+            string NombreArchivo = "StoCom.sql";
             Ruta = cadenaRuta + NombreArchivo;
             Exito = RealizarBackup(Servidor, Base, Puerto, Usuario, Clave, Ruta);
             return Exito;

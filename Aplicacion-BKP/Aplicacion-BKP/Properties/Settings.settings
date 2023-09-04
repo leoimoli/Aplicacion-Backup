@@ -6,7 +6,7 @@
       <Value Profile="(Default)">server=192.168.1.130;Port=3306;User Id=root;password=admin;database=aniuri;Persist Security Info=True</Value>
     </Setting>
     <Setting Name="ruta" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Backups\backup.sql</Value>
+      <Value Profile="(Default)">C:\\Users\\Usuario\\Desktop\\Backup\\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

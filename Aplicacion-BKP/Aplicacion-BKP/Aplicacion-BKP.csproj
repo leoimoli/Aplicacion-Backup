@@ -99,8 +99,20 @@
     <Compile Include="InicioWF.Designer.cs">
       <DependentUpon>InicioWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mayorista509WF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mayorista509WF.Designer.cs">
+      <DependentUpon>Mayorista509WF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PulpejitosWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PulpejitosWF.Designer.cs">
+      <DependentUpon>PulpejitosWF.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BackupProductivosWF.resx">
       <DependentUpon>BackupProductivosWF.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InicioWF.resx">
       <DependentUpon>InicioWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mayorista509WF.resx">
+      <DependentUpon>Mayorista509WF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +135,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PulpejitosWF.resx">
+      <DependentUpon>PulpejitosWF.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +154,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\Logo-509.png" />
+    <None Include="Resources\Logo-Pulpejitos1.png" />
+    <None Include="Resources\Logo-Pulpejitos.png" />
+    <None Include="Resources\Logo_Pulpejitos.png" />
+    <None Include="Resources\menos %282%291.png" />
+    <None Include="Resources\cancelar2.png" />
+    <None Include="Resources\cerrar.png" />
     <None Include="Resources\Logo-App-Bkp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
