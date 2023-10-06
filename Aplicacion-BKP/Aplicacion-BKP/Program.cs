@@ -18,7 +18,8 @@ namespace Aplicacion_BKP
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new BackupProductivosWF());
             //Application.Run(new PulpejitosWF());
-            Application.Run(new Mayorista509WF());
+            //Application.Run(new Mayorista509WF());
+            Application.Run(new TuHogarWF());
         }
     }
 }

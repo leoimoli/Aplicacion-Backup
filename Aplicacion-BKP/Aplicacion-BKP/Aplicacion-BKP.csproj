@@ -113,6 +113,12 @@
     <Compile Include="PulpejitosWF.Designer.cs">
       <DependentUpon>PulpejitosWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="TuHogarWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TuHogarWF.Designer.cs">
+      <DependentUpon>TuHogarWF.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BackupProductivosWF.resx">
       <DependentUpon>BackupProductivosWF.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="PulpejitosWF.resx">
       <DependentUpon>PulpejitosWF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TuHogarWF.resx">
+      <DependentUpon>TuHogarWF.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\Logo_Circulo.png" />
     <None Include="Resources\Logo-509.png" />
     <None Include="Resources\Logo-Pulpejitos1.png" />
     <None Include="Resources\Logo-Pulpejitos.png" />
